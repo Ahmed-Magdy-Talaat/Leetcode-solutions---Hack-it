@@ -2,14 +2,15 @@ class Solution {
 public:
 
     int minDeletionSize(vector<string>& strs) {
-        map<int,int>mp;
+        int sum=0;
+         for(int j=0;j<strs[0].size();j++){
         for(int i=1;i<strs.size();i++){
-            for(int j=0;j<strs[i].size();j++){
                 if(strs[i][j]<strs[i-1][j]){
-                    mp[j]++;
+                    sum++;
+                    break;
                 }
             }
         }
-        return mp.size();
+        return sum;
     }
 };
